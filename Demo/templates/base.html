@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <title>{% block title %}Site Başlığı{% endblock %}</title>
   {% tailwind_css %}
+  {% block head %}{% endblock %}
 </head>
-<body class="bg-gray-500">
-  
-  <!-- BURAYA NAVBAR GELECEK -->
+
+  <!-- Navbar -->
   {% include "partials/navbar.html" %}
 
-  <!-- İçerik -->
-  <main class="container mx-auto mt-6">
+  <!-- Sayfa içeriği -->
+  <main class="container mx-auto mt-8 px-4">
     {% block content %}{% endblock %}
   </main>
 
