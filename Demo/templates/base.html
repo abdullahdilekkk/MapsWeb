@@ -1,0 +1,20 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Site Başlığı{% endblock %}</title>
+  {% tailwind_css %}
+</head>
+<body class="bg-gray-100">
+
+  <!-- BURAYA NAVBAR GELECEK -->
+  {% include "partials/navbar.html" %}
+
+  <!-- İçerik -->
+  <main class="container mx-auto mt-6">
+    {% block content %}{% endblock %}
+  </main>
+
+</body>
+</html>

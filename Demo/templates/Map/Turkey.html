@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Map Of Turkey{% endblock %}
+
+{% block head %}
+   <style>
+    html, body, #map-wrap { height:100%; margin:0; }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div class="map-wrap">
+    {{ Turkey|safe }}
+  </div>
+{% endblock %}
