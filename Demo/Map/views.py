@@ -26,9 +26,15 @@ def cities_only(request, city):
     if City.objects.filter(name=city):
         obje_city = City.objects.get(name=city)
         if obje_city.is_metropolitan:
-            zoom = 10
+            if obje_city.name=="Istanbul":
+                zoom = 10
+            else: 
+                zoom = 11
         else:
             zoom = 12
         return show_map(request, obje_city.name, [obje_city.qx, obje_city.qy], zoom=zoom)
     
-   
+
+def categories_village_view(request):
+   villages = City.objects.all()
+   return render(request, 'Categories/Turkey.html',{"villages":villages})
