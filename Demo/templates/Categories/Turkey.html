@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Türkiye • İller{% endblock %}
+
+{% block content %}
+<div class="mx-auto max-w-3xl p-4">
+  <h1 class="text-3xl font-bold mb-4 text-emerald-700">Türkiye İlleri</h1>
+
+  <ul class="divide-y rounded-xl border bg-white">
+    {% for vil in villages %}
+      <li>
+        <a href="{% url 'City_Page' vil.name %}" class="block px-4 py-2 hover:bg-gray-100 transition">
+          <div class="flex items-center justify-between">
+            <span class="font-medium text-lg ">{{ vil.name }}</span>
+            {% if vil.is_metropolitan %}
+              <span class="text-s rounded-full border px-2 py-0.5 bg-emerald-700 text-white border-transparent">Metropolitan</span>
+            {% endif %}
+          </div>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
