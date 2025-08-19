@@ -12,16 +12,11 @@
     --color-emerald-700: oklch(50.8% 0.118 165.612);
     --color-emerald-800: oklch(43.2% 0.095 166.913);
     --color-emerald-900: oklch(37.8% 0.077 168.94);
-    --color-blue-300: oklch(80.9% 0.105 251.813);
     --color-gray-100: oklch(96.7% 0.003 264.542);
-    --color-gray-600: oklch(44.6% 0.03 256.802);
-    --color-gray-700: oklch(37.3% 0.034 259.733);
-    --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --container-5xl: 64rem;
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-2xl: 1.5rem;
@@ -32,7 +27,6 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --tracking-wide: 0.025em;
-    --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1669,9 +1663,6 @@
     padding-inline: calc(0.25rem * 0);
     opacity: 0%;
   }
-  .mx-auto {
-    margin-inline: auto;
-  }
   .label {
     display: inline-flex;
     align-items: center;
@@ -1717,9 +1708,6 @@
   }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
-  }
-  .mb-4 {
-    margin-bottom: calc(var(--spacing) * 4);
   }
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
@@ -1885,68 +1873,29 @@
   .h-20 {
     height: calc(var(--spacing) * 20);
   }
-  .h-24 {
-    height: calc(var(--spacing) * 24);
+  .h-\[0px\] {
+    height: 0px;
   }
-  .h-\[00px\] {
-    height: 00px;
-  }
-  .h-\[60px\] {
-    height: 60px;
-  }
-  .h-\[62px\] {
-    height: 62px;
-  }
-  .h-\[70vh\] {
-    height: 70vh;
-  }
-  .h-\[80vh\] {
-    height: 80vh;
-  }
-  .h-\[500px\] {
-    height: 500px;
+  .h-\[590px\] {
+    height: 590px;
   }
   .h-\[600px\] {
     height: 600px;
   }
-  .h-\[620px\] {
-    height: 620px;
-  }
-  .h-\[625px\] {
-    height: 625px;
-  }
-  .h-\[630px\] {
-    height: 630px;
+  .h-\[610px\] {
+    height: 610px;
   }
   .h-\[640px\] {
     height: 640px;
   }
-  .h-\[650px\] {
-    height: 650px;
-  }
-  .h-\[690px\] {
-    height: 690px;
-  }
-  .h-\[700px\] {
-    height: 700px;
-  }
   .h-full {
     height: 100%;
-  }
-  .w-\[1000px\] {
-    width: 1000px;
   }
   .w-\[1200px\] {
     width: 1200px;
   }
-  .w-\[full\] {
-    width: full;
-  }
   .w-full {
     width: 100%;
-  }
-  .max-w-5xl {
-    max-width: var(--container-5xl);
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
@@ -2005,9 +1954,6 @@
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
-  .rounded-lg {
-    border-radius: var(--radius-lg);
-  }
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
@@ -2015,17 +1961,14 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .\!bg-white {
+    background-color: var(--color-white) !important;
+  }
   .bg-emerald-500 {
     background-color: var(--color-emerald-500);
   }
-  .bg-emerald-700 {
-    background-color: var(--color-emerald-700);
-  }
   .bg-gray-100 {
     background-color: var(--color-gray-100);
-  }
-  .bg-gray-600 {
-    background-color: var(--color-gray-600);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -2091,9 +2034,6 @@
   .text-emerald-800 {
     color: var(--color-emerald-800);
   }
-  .text-gray-800 {
-    color: var(--color-gray-800);
-  }
   .text-gray-900 {
     color: var(--color-gray-900);
   }
@@ -2156,11 +2096,6 @@
     }
   }
   @media (hover: hover) {
-    .hover\:bg-gray-700:hover {
-      background-color: var(--color-gray-700);
-    }
-  }
-  @media (hover: hover) {
     .hover\:bg-white\/10:hover {
       background-color: color-mix(in srgb, #fff 10%, transparent);
     }
@@ -2168,11 +2103,6 @@
       .hover\:bg-white\/10:hover {
         background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
       }
-    }
-  }
-  @media (hover: hover) {
-    .hover\:text-blue-300:hover {
-      color: var(--color-blue-300);
     }
   }
   @media (hover: hover) {
