@@ -1873,20 +1873,8 @@
   .h-20 {
     height: calc(var(--spacing) * 20);
   }
-  .h-\[0px\] {
-    height: 0px;
-  }
-  .h-\[590px\] {
-    height: 590px;
-  }
   .h-\[600px\] {
     height: 600px;
-  }
-  .h-\[610px\] {
-    height: 610px;
-  }
-  .h-\[640px\] {
-    height: 640px;
   }
   .h-full {
     height: 100%;
@@ -1966,9 +1954,6 @@
   }
   .bg-emerald-500 {
     background-color: var(--color-emerald-500);
-  }
-  .bg-gray-100 {
-    background-color: var(--color-gray-100);
   }
   .bg-white {
     background-color: var(--color-white);
