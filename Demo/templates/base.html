@@ -5,14 +5,23 @@
   <meta charset="UTF-8">
   <title>{% block title %}Site Başlığı{% endblock %}</title>
   {% tailwind_css %}
-  {% block head %}{% endblock %}
+  {% block head %}
+  <style>
+    /* Harita için sabit yükseklik */
+    #map-container {
+      height: 80vh;  /* ekranın %80 yüksekliği */
+      width: 100%;
+    }
+  </style>
+  {% endblock %}
 </head>
+<body class="bg-gray-100 text-gray-900">
 
   <!-- Navbar -->
   {% include "partials/navbar.html" %}
 
   <!-- Sayfa içeriği -->
-  <main class="container mx-auto mt-8 px-4">
+  <main class="container mx-auto mt-10 px-6">
     {% block content %}{% endblock %}
   </main>
 
