@@ -9,7 +9,8 @@
 
 {% block content %}
   <h1 class="text-3xl font-bold text-gray-800 mb-4">Basic Map Of Istanbul</h1>
-  <div class="map-wrap w-full h-[600px]">
-    {{ Istanbul|safe }}
+  <div id="map-container">
+    {{ map|safe }}
   </div>
+
 {% endblock %}
