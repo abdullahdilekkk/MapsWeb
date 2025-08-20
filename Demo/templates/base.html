@@ -8,12 +8,12 @@
   {% block head %}{% endblock %}
 
 </head>
-<body class="bg-white text-gray-900">
+<body class="min-h-screen flex flex-col bg-white text-gray-900">
   {% include "partials/navbar.html" %}
 
 
   <!-- Sayfa içeriği -->
-  <main class="w-full mt-10 px-6 bg-white">
+  <main class="flex-1 w-full mt-10 px-6 bg-white">
     {% block content %}{% endblock %}
   </main>
 

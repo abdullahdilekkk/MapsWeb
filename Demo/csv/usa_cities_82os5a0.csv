@@ -1,0 +1,58 @@
+name,qx,qy,is_metropolitan,country
+New York City,40.7128,-74.006,True,USA
+Los Angeles,34.0522,-118.2437,True,USA
+Chicago,41.8781,-87.6298,True,USA
+Houston,29.7604,-95.3698,True,USA
+Phoenix,33.4484,-112.074,True,USA
+Philadelphia,39.9526,-75.1652,True,USA
+San Antonio,29.4241,-98.4936,True,USA
+San Diego,32.7157,-117.1611,True,USA
+Dallas,32.7767,-96.797,True,USA
+San Jose,37.3382,-121.8863,True,USA
+Austin,30.2672,-97.7431,True,USA
+Jacksonville,30.3322,-81.6557,True,USA
+San Francisco,37.7749,-122.4194,True,USA
+Indianapolis,39.7684,-86.1581,True,USA
+Columbus,39.9612,-82.9988,True,USA
+Fort Worth,32.7555,-97.3308,True,USA
+Charlotte,35.2271,-80.8431,True,USA
+Seattle,47.6062,-122.3321,True,USA
+Denver,39.7392,-104.9903,True,USA
+"Washington, D.C.",38.9072,-77.0369,True,USA
+Boston,42.3601,-71.0589,True,USA
+El Paso,31.7619,-106.485,True,USA
+Nashville,36.1627,-86.7816,True,USA
+Detroit,42.3314,-83.0458,True,USA
+Oklahoma City,35.4676,-97.5164,True,USA
+Portland,45.5051,-122.675,True,USA
+Las Vegas,36.1699,-115.1398,True,USA
+Memphis,35.1495,-90.049,True,USA
+Louisville,38.2527,-85.7585,True,USA
+Baltimore,39.2904,-76.6122,True,USA
+Milwaukee,43.0389,-87.9065,True,USA
+Albuquerque,35.0844,-106.6504,True,USA
+Tucson,32.2226,-110.9747,True,USA
+Fresno,36.7378,-119.7871,True,USA
+Sacramento,38.5816,-121.4944,True,USA
+Kansas City,39.0997,-94.5786,True,USA
+Atlanta,33.749,-84.388,True,USA
+Miami,25.7617,-80.1918,True,USA
+Honolulu,21.3069,-157.8583,True,USA
+Anchorage,61.2181,-149.9003,True,USA
+Salt Lake City,40.7608,-111.891,False,USA
+Boise,43.615,-116.2023,False,USA
+Little Rock,34.7465,-92.2896,False,USA
+Des Moines,41.5868,-93.625,False,USA
+Charleston,32.7765,-79.9311,False,USA
+Baton Rouge,30.4515,-91.1871,False,USA
+Omaha,41.2565,-95.9345,False,USA
+Tulsa,36.154,-95.9928,False,USA
+Buffalo,42.8864,-78.8784,False,USA
+Madison,43.0731,-89.4012,False,USA
+Raleigh,35.7796,-78.6382,False,USA
+Richmond,37.5407,-77.436,False,USA
+Spokane,47.6588,-117.426,False,USA
+Tampa,27.9506,-82.4572,False,USA
+Orlando,28.5383,-81.3792,False,USA
+Cleveland,41.4993,-81.6944,False,USA
+Pittsburgh,40.4406,-79.9959,False,USA

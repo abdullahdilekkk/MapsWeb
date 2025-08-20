@@ -1,0 +1,51 @@
+name,qx,qy,is_metropolitan,country
+Toronto,43.65107,-79.347015,True,Canada
+Montreal,45.50169,-73.567253,True,Canada
+Vancouver,49.282729,-123.120738,True,Canada
+Calgary,51.044733,-114.071883,True,Canada
+Edmonton,53.546135,-113.493823,True,Canada
+Ottawa,45.42153,-75.697193,True,Canada
+Winnipeg,49.895077,-97.138451,True,Canada
+Quebec City,46.813878,-71.207981,True,Canada
+Hamilton,43.25572,-79.871102,True,Canada
+Kitchener,43.451639,-80.492533,True,Canada
+London,42.984923,-81.245277,False,Canada
+Halifax,44.648618,-63.585948,False,Canada
+Victoria,48.428421,-123.365644,False,Canada
+Saskatoon,52.133214,-106.670046,False,Canada
+Regina,50.44521,-104.618896,False,Canada
+St. John's,47.56151,-52.712576,False,Canada
+Windsor,42.314937,-83.036363,False,Canada
+Oshawa,43.897545,-78.865791,False,Canada
+Sherbrooke,45.400992,-71.882428,False,Canada
+Saguenay,48.428118,-71.068755,False,Canada
+Trois-Rivières,46.34515,-72.54771,False,Canada
+Guelph,43.544804,-80.248167,False,Canada
+Moncton,46.087816,-64.778231,False,Canada
+Kelowna,49.887952,-119.49601,False,Canada
+Abbotsford,49.050438,-122.30447,False,Canada
+Kingston,44.231172,-76.485954,False,Canada
+Thunder Bay,48.380895,-89.247682,False,Canada
+Charlottetown,46.23824,-63.13107,False,Canada
+Saint John,45.273315,-66.063308,False,Canada
+Barrie,44.389356,-79.690331,False,Canada
+Red Deer,52.268112,-113.811239,False,Canada
+Lethbridge,49.693491,-112.84184,False,Canada
+Kamloops,50.674522,-120.327267,False,Canada
+Nanaimo,49.165883,-123.940064,False,Canada
+Grande Prairie,55.170666,-118.794643,False,Canada
+Fredericton,45.963589,-66.643115,False,Canada
+Drummondville,45.883682,-72.484175,False,Canada
+Chicoutimi,48.42812,-71.082383,False,Canada
+Medicine Hat,50.04103,-110.67749,False,Canada
+Peterborough,44.309059,-78.319747,False,Canada
+Prince George,53.917064,-122.749672,False,Canada
+Sault Ste. Marie,46.521857,-84.346089,False,Canada
+Chilliwack,49.15794,-121.951467,False,Canada
+Whitehorse,60.721188,-135.056839,False,Canada
+Yellowknife,62.454,-114.3718,False,Canada
+Iqaluit,63.7467,-68.517,False,Canada
+Sudbury,46.4917,-80.993,False,Canada
+Brantford,43.1394,-80.2644,False,Canada
+Cornwall,45.0213,-74.73,False,Canada
+Belleville,44.1628,-77.3832,False,Canada

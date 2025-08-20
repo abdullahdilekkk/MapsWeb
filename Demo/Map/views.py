@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import City
+from .models import City, Country, Category
 # Create your views here.
 import folium
 
@@ -16,25 +16,55 @@ def show_map(request, title, location, zoom=6):
     return render(request, "Map/basicMap.html", {"map": html, "title": title})
 
 
-def turkey_only(request):
-    return show_map(request, "Turkey", [39.0, 35.0])
-    # m = folium.Map(location=[39.0, 35.0], zoom_start=6, width="100%", height="600px")
-    # html = m._repr_html_()
-    # return render(request, "Map/Turkey.html", {"Turkey":html})
 
-def cities_only(request, city):
-    if City.objects.filter(name=city):
-        obje_city = City.objects.get(name=city)
-        if obje_city.is_metropolitan:
-            if obje_city.name=="Istanbul":
-                zoom = 10
-            else: 
-                zoom = 11
-        else:
-            zoom = 12
-        return show_map(request, obje_city.name, [obje_city.qx, obje_city.qy], zoom=zoom)
+def categories_get(request):
+    categories = Category.objects.all().order_by("name")
+    return render(request, "Categories/MainCategory.html", {"categories":categories})
+
     
 
-def categories_village_view(request):
-   villages = City.objects.all()
-   return render(request, 'Categories/Turkey.html',{"villages":villages})
+
+def category_details_get(request, category_slug):
+    category_details = get_object_or_404(Category, slug=category_slug)
+
+    if category_details.slug == "basic-maps":
+        countries = Country.objects.all().order_by("name")
+
+    else:#şu anlık boş atıyorum zamanla maps türleri ile dolucak
+        return redirect('CategoryPage')
+
+    context = {
+        "category":category_details,
+        "countries":countries
+    }
+
+    return render(request, "Categories/CategoryDetails.html", context)
+
+
+def country_details(request, category_slug, country_slug):
+    country = get_object_or_404(Country, slug=country_slug)
+    cities = country.cities.all().order_by("name")
+
+    context = {
+        "category_slug":category_slug,
+        "country":country,
+        "cities":cities
+    }
+
+    return render(request, "Categories/CountryDetails.html", context) 
+
+def city_show_map(request, category_slug, country_slug, city_slug):
+
+    country = get_object_or_404(Country, slug=country_slug)#county deki aynı isimli cityler hata vermesin diye
+    city = get_object_or_404(City, country=country, slug=city_slug)
+
+    if city.is_metropolitan:
+        if city.name=="Istanbul":
+            zoom = 10
+        else: 
+            zoom = 11
+    else:
+        zoom = 12
+    return show_map(request, city.name, [city.qx, city.qy], zoom=zoom)
+
+
