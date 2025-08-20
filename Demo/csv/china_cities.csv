@@ -1,0 +1,13 @@
+name,qx,qy,is_metropolitan,country
+Beijing,39.9042,116.4074,True,China
+Shanghai,31.2304,121.4737,True,China
+Guangzhou,23.1291,113.2644,True,China
+Shenzhen,22.5431,114.0579,True,China
+Chongqing,29.563,106.5516,True,China
+Chengdu,30.5728,104.0668,True,China
+Wuhan,30.5928,114.3055,True,China
+Xi'an,34.3416,108.9398,True,China
+Hangzhou,30.2741,120.1551,True,China
+Nanjing,32.0603,118.7969,True,China
+Tianjin,39.3434,117.3616,True,China
+Harbin,45.8038,126.5349,False,China

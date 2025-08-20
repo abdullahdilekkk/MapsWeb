@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Categories-Basic Maps{% endblock %}
+
+{% block content %}
+<div class="mx-auto max-w-3xl p-4">
+  <h1 class="text-3xl font-bold mb-4 text-emerald-700">{{ category.name }}</h1>
+
+  <ul class="divide-y rounded-xl border bg-white">
+    {% for cou in countries %}
+      <li>
+
+            <a href="{% url 'CountryPage' category_slug=category.slug country_slug=cou.slug %}" class="block px-4 py-2 hover:bg-gray-100 transition">
+                <div class="flex items-center justify-between">
+                    <span class="font-medium text-xl ">{{ cou.name }}</ span>
+                </div>
+            </a>
+            
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
