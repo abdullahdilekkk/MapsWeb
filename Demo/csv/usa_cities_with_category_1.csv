@@ -1,0 +1,58 @@
+name,qx,qy,is_metropolitan,country,category
+New York City,40.7128,-74.006,True,USA,basic-maps
+Los Angeles,34.0522,-118.2437,True,USA,basic-maps
+Chicago,41.8781,-87.6298,True,USA,basic-maps
+Houston,29.7604,-95.3698,True,USA,basic-maps
+Phoenix,33.4484,-112.074,True,USA,basic-maps
+Philadelphia,39.9526,-75.1652,True,USA,basic-maps
+San Antonio,29.4241,-98.4936,True,USA,basic-maps
+San Diego,32.7157,-117.1611,True,USA,basic-maps
+Dallas,32.7767,-96.797,True,USA,basic-maps
+San Jose,37.3382,-121.8863,True,USA,basic-maps
+Austin,30.2672,-97.7431,True,USA,basic-maps
+Jacksonville,30.3322,-81.6557,True,USA,basic-maps
+San Francisco,37.7749,-122.4194,True,USA,basic-maps
+Indianapolis,39.7684,-86.1581,True,USA,basic-maps
+Columbus,39.9612,-82.9988,True,USA,basic-maps
+Fort Worth,32.7555,-97.3308,True,USA,basic-maps
+Charlotte,35.2271,-80.8431,True,USA,basic-maps
+Seattle,47.6062,-122.3321,True,USA,basic-maps
+Denver,39.7392,-104.9903,True,USA,basic-maps
+"Washington D.C.",38.9072,-77.0369,True,USA,basic-maps
+Boston,42.3601,-71.0589,True,USA,basic-maps
+El Paso,31.7619,-106.485,True,USA,basic-maps
+Nashville,36.1627,-86.7816,True,USA,basic-maps
+Detroit,42.3314,-83.0458,True,USA,basic-maps
+Oklahoma City,35.4676,-97.5164,True,USA,basic-maps
+Portland,45.5051,-122.675,True,USA,basic-maps
+Las Vegas,36.1699,-115.1398,True,USA,basic-maps
+Memphis,35.1495,-90.049,True,USA,basic-maps
+Louisville,38.2527,-85.7585,True,USA,basic-maps
+Baltimore,39.2904,-76.6122,True,USA,basic-maps
+Milwaukee,43.0389,-87.9065,True,USA,basic-maps
+Albuquerque,35.0844,-106.6504,True,USA,basic-maps
+Tucson,32.2226,-110.9747,True,USA,basic-maps
+Fresno,36.7378,-119.7871,True,USA,basic-maps
+Sacramento,38.5816,-121.4944,True,USA,basic-maps
+Kansas City,39.0997,-94.5786,True,USA,basic-maps
+Atlanta,33.749,-84.388,True,USA,basic-maps
+Miami,25.7617,-80.1918,True,USA,basic-maps
+Honolulu,21.3069,-157.8583,True,USA,basic-maps
+Anchorage,61.2181,-149.9003,True,USA,basic-maps
+Salt Lake City,40.7608,-111.891,False,USA,basic-maps
+Boise,43.615,-116.2023,False,USA,basic-maps
+Little Rock,34.7465,-92.2896,False,USA,basic-maps
+Des Moines,41.5868,-93.625,False,USA,basic-maps
+Charleston,32.7765,-79.9311,False,USA,basic-maps
+Baton Rouge,30.4515,-91.1871,False,USA,basic-maps
+Omaha,41.2565,-95.9345,False,USA,basic-maps
+Tulsa,36.154,-95.9928,False,USA,basic-maps
+Buffalo,42.8864,-78.8784,False,USA,basic-maps
+Madison,43.0731,-89.4012,False,USA,basic-maps
+Raleigh,35.7796,-78.6382,False,USA,basic-maps
+Richmond,37.5407,-77.436,False,USA,basic-maps
+Spokane,47.6588,-117.426,False,USA,basic-maps
+Tampa,27.9506,-82.4572,False,USA,basic-maps
+Orlando,28.5383,-81.3792,False,USA,basic-maps
+Cleveland,41.4993,-81.6944,False,USA,basic-maps
+Pittsburgh,40.4406,-79.9959,False,USA,basic-maps

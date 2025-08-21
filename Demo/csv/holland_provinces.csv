@@ -1,0 +1,13 @@
+name,qx,qy,is_metropolitan,country,category
+Drenthe,52.9476,6.6231,False,Netherlands,basic-maps
+Flevoland,52.5279,5.5953,False,Netherlands,basic-maps
+Friesland,53.1642,5.7818,False,Netherlands,basic-maps
+Gelderland,52.0617,5.9396,False,Netherlands,basic-maps
+Groningen,53.2194,6.5665,False,Netherlands,basic-maps
+Limburg,50.8514,5.69,False,Netherlands,basic-maps
+North Brabant,51.4827,5.2322,False,Netherlands,basic-maps
+North Holland,52.52,4.79,True,Netherlands,basic-maps
+Overijssel,52.438,6.5016,False,Netherlands,basic-maps
+South Holland,51.9196,4.4818,True,Netherlands,basic-maps
+Utrecht,52.0907,5.1214,True,Netherlands,basic-maps
+Zeeland,51.494,3.8497,False,Netherlands,basic-maps

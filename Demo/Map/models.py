@@ -22,6 +22,7 @@ class Category(models.Model):
 class Country(models.Model):
     name = models.CharField(max_length=156,  unique=True)
     slug = models.SlugField(max_length=156, unique=True, blank=True)
+    categories = models.ManyToManyField(Category, blank=True, related_name="countries")
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -38,6 +39,7 @@ class City(models.Model):
     qy = models.FloatField()
     is_metropolitan = models.BooleanField(default=False)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name="cities")
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True, related_name="cities")
     slug = models.SlugField(max_length=156, blank=True, null=True)
 
     def save(self, *args, **kwargs):

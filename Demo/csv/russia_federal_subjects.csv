@@ -1,0 +1,84 @@
+name,qx,qy,is_metropolitan,country,category
+Adygea Republic,44.8229,40.175,False,Russia,basic-maps
+Altai Krai,51.7936,82.6759,False,Russia,basic-maps
+Altai Republic,50.71,86.8894,False,Russia,basic-maps
+Amur Oblast,53.7224,127.288,False,Russia,basic-maps
+Arkhangelsk Oblast,64.5399,40.515,False,Russia,basic-maps
+Astrakhan Oblast,46.3588,48.0599,False,Russia,basic-maps
+Bashkortostan Republic,54.7348,55.9579,False,Russia,basic-maps
+Belgorod Oblast,50.5954,36.5873,False,Russia,basic-maps
+Bryansk Oblast,53.2521,34.3717,False,Russia,basic-maps
+Buryatia Republic,51.8335,107.5846,False,Russia,basic-maps
+Chechen Republic,43.3178,45.698,False,Russia,basic-maps
+Chelyabinsk Oblast,55.1599,61.4026,False,Russia,basic-maps
+Chukotka Autonomous Okrug,64.7337,177.5086,False,Russia,basic-maps
+Chuvash Republic,56.1166,47.251,False,Russia,basic-maps
+Dagestan Republic,42.9831,47.5047,False,Russia,basic-maps
+Ingushetia Republic,43.1675,44.8167,False,Russia,basic-maps
+Irkutsk Oblast,52.287,104.281,False,Russia,basic-maps
+Ivanovo Oblast,57.0,40.9739,False,Russia,basic-maps
+Jewish Autonomous Oblast,48.7946,132.921,False,Russia,basic-maps
+Kabardino-Balkar Republic,43.485,43.607,False,Russia,basic-maps
+Kaliningrad Oblast,54.7104,20.4522,False,Russia,basic-maps
+Kaluga Oblast,54.5138,36.2612,False,Russia,basic-maps
+Kamchatka Krai,53.0452,158.6483,False,Russia,basic-maps
+Karachay-Cherkess Republic,43.914,41.919,False,Russia,basic-maps
+Karelia Republic,61.789,34.3597,False,Russia,basic-maps
+Kemerovo Oblast,55.355,86.087,False,Russia,basic-maps
+Khabarovsk Krai,48.4802,135.0719,False,Russia,basic-maps
+Khakassia Republic,53.72,91.4424,False,Russia,basic-maps
+Khanty-Mansi Autonomous Okrug,61.0024,69.0189,False,Russia,basic-maps
+Kirov Oblast,58.6035,49.6679,False,Russia,basic-maps
+Komi Republic,61.6688,50.8356,False,Russia,basic-maps
+Kostroma Oblast,57.7679,40.9269,False,Russia,basic-maps
+Krasnodar Krai,45.0355,38.9753,False,Russia,basic-maps
+Krasnoyarsk Krai,56.0153,92.8932,False,Russia,basic-maps
+Kurgan Oblast,55.441,65.341,False,Russia,basic-maps
+Kursk Oblast,51.7304,36.1926,False,Russia,basic-maps
+Leningrad Oblast,59.9386,30.3141,False,Russia,basic-maps
+Lipetsk Oblast,52.61,39.594,False,Russia,basic-maps
+Magadan Oblast,59.5682,150.8085,False,Russia,basic-maps
+Mari El Republic,56.6344,47.899,False,Russia,basic-maps
+Mordovia Republic,54.18,45.186,False,Russia,basic-maps
+Moscow,55.7558,37.6173,True,Russia,basic-maps
+Moscow Oblast,55.7558,38.6173,False,Russia,basic-maps
+Murmansk Oblast,68.9585,33.0827,False,Russia,basic-maps
+Nenets Autonomous Okrug,67.638,53.0069,False,Russia,basic-maps
+Nizhny Novgorod Oblast,56.2965,43.9361,False,Russia,basic-maps
+North Ossetia,43.05,44.65,False,Russia,basic-maps
+Novgorod Oblast,58.5215,31.2755,False,Russia,basic-maps
+Novosibirsk Oblast,55.0302,82.9204,False,Russia,basic-maps
+Omsk Oblast,54.9914,73.3645,False,Russia,basic-maps
+Orenburg Oblast,51.7666,55.1,False,Russia,basic-maps
+Oryol Oblast,52.9673,36.0696,False,Russia,basic-maps
+Penza Oblast,53.2,45.0,False,Russia,basic-maps
+Perm Krai,58.0105,56.2502,False,Russia,basic-maps
+Primorsky Krai,43.1164,131.8824,False,Russia,basic-maps
+Pskov Oblast,57.8194,28.3318,False,Russia,basic-maps
+Rostov Oblast,47.2357,39.7015,False,Russia,basic-maps
+Ryazan Oblast,54.619,39.744,False,Russia,basic-maps
+Saint Petersburg,59.9343,30.3351,True,Russia,basic-maps
+Sakha Republic (Yakutia),62.0272,129.7326,False,Russia,basic-maps
+Sakhalin Oblast,46.9592,142.738,False,Russia,basic-maps
+Samara Oblast,53.1959,50.1,False,Russia,basic-maps
+Saratov Oblast,51.5406,46.0086,False,Russia,basic-maps
+Sevastopol,44.6167,33.5254,True,Russia,basic-maps
+Smolensk Oblast,54.7818,32.0401,False,Russia,basic-maps
+Stavropol Krai,45.0428,41.9734,False,Russia,basic-maps
+Sverdlovsk Oblast,56.8389,60.6057,False,Russia,basic-maps
+Tambov Oblast,52.7167,41.4333,False,Russia,basic-maps
+Tatarstan Republic,55.7963,49.1088,False,Russia,basic-maps
+Tomsk Oblast,56.4847,84.9482,False,Russia,basic-maps
+Tula Oblast,54.1961,37.6182,False,Russia,basic-maps
+Tuva Republic,51.7191,94.4377,False,Russia,basic-maps
+Tver Oblast,56.8587,35.9176,False,Russia,basic-maps
+Tyumen Oblast,57.153,65.5343,False,Russia,basic-maps
+Udmurt Republic,56.8526,53.2045,False,Russia,basic-maps
+Ulyanovsk Oblast,54.3142,48.4031,False,Russia,basic-maps
+Vladimir Oblast,56.1291,40.4066,False,Russia,basic-maps
+Volgograd Oblast,48.708,44.5133,False,Russia,basic-maps
+Vologda Oblast,59.2187,39.8886,False,Russia,basic-maps
+Voronezh Oblast,51.6755,39.2089,False,Russia,basic-maps
+Yamalo-Nenets Autonomous Okrug,66.0831,76.6809,False,Russia,basic-maps
+Yaroslavl Oblast,57.6266,39.8938,False,Russia,basic-maps
+Zabaykalsky Krai,52.0333,113.5,False,Russia,basic-maps

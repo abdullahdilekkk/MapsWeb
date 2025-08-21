@@ -1,0 +1,9 @@
+name,qx,qy,is_metropolitan,country,category
+New South Wales,-33.8688,151.2093,True,Australia,basic-maps
+Victoria,-37.8136,144.9631,True,Australia,basic-maps
+Queensland,-27.4698,153.0251,True,Australia,basic-maps
+Western Australia,-31.9505,115.8605,True,Australia,basic-maps
+South Australia,-34.9285,138.6007,True,Australia,basic-maps
+Tasmania,-42.8821,147.3272,False,Australia,basic-maps
+Australian Capital Territory,-35.2809,149.13,True,Australia,basic-maps
+Northern Territory,-12.4634,130.8456,False,Australia,basic-maps

@@ -1,0 +1,45 @@
+name,qx,qy,is_metropolitan,country,category
+Greater London,51.5074,-0.1278,True,United Kingdom,basic-maps
+Greater Manchester,53.4808,-2.2426,True,United Kingdom,basic-maps
+West Midlands,52.4862,-1.8904,True,United Kingdom,basic-maps
+Tyne and Wear,54.9783,-1.6178,True,United Kingdom,basic-maps
+Merseyside,53.4084,-2.9916,True,United Kingdom,basic-maps
+West Yorkshire,53.8008,-1.5491,True,United Kingdom,basic-maps
+South Yorkshire,53.3811,-1.4701,True,United Kingdom,basic-maps
+Bedfordshire,52.1357,-0.468,False,United Kingdom,basic-maps
+Berkshire,51.4543,-0.9781,False,United Kingdom,basic-maps
+Buckinghamshire,51.5283,-0.726,False,United Kingdom,basic-maps
+Cambridgeshire,52.2053,0.1218,False,United Kingdom,basic-maps
+Cheshire,53.191,-2.3053,False,United Kingdom,basic-maps
+Cornwall,50.5039,-4.4699,False,United Kingdom,basic-maps
+Cumbria,54.5742,-3.355,False,United Kingdom,basic-maps
+Derbyshire,52.9225,-1.4768,False,United Kingdom,basic-maps
+Devon,50.7184,-3.5339,False,United Kingdom,basic-maps
+Dorset,50.715,-2.2185,False,United Kingdom,basic-maps
+East Riding of Yorkshire,53.8007,-0.3017,False,United Kingdom,basic-maps
+East Sussex,50.9534,0.1743,False,United Kingdom,basic-maps
+Essex,51.5388,0.0984,False,United Kingdom,basic-maps
+Gloucestershire,51.8642,-2.2382,False,United Kingdom,basic-maps
+Hampshire,51.1018,-1.308,False,United Kingdom,basic-maps
+Herefordshire,52.1082,-2.7214,False,United Kingdom,basic-maps
+Hertfordshire,51.7632,-0.2264,False,United Kingdom,basic-maps
+Isle of Wight,50.6938,-1.3046,False,United Kingdom,basic-maps
+Kent,51.2784,1.0797,False,United Kingdom,basic-maps
+Lancashire,53.7632,-2.7048,False,United Kingdom,basic-maps
+Leicestershire,52.6369,-1.1398,False,United Kingdom,basic-maps
+Lincolnshire,53.2344,-0.5386,False,United Kingdom,basic-maps
+Norfolk,52.6309,1.2974,False,United Kingdom,basic-maps
+North Yorkshire,54.2847,-1.462,False,United Kingdom,basic-maps
+Northamptonshire,52.2405,-0.9027,False,United Kingdom,basic-maps
+Northumberland,55.1421,-2.0968,False,United Kingdom,basic-maps
+Nottinghamshire,52.9548,-1.1581,False,United Kingdom,basic-maps
+Oxfordshire,51.752,-1.2577,False,United Kingdom,basic-maps
+Rutland,52.6601,-0.728,False,United Kingdom,basic-maps
+Shropshire,52.7073,-2.7543,False,United Kingdom,basic-maps
+Somerset,51.0128,-3.1048,False,United Kingdom,basic-maps
+Staffordshire,52.8055,-2.1187,False,United Kingdom,basic-maps
+Suffolk,52.2053,1.0559,False,United Kingdom,basic-maps
+Surrey,51.2379,-0.5735,False,United Kingdom,basic-maps
+Wiltshire,51.0688,-1.7948,False,United Kingdom,basic-maps
+Worcestershire,52.192,-2.22,False,United Kingdom,basic-maps
+Bristol,51.4545,-2.5879,True,United Kingdom,basic-maps

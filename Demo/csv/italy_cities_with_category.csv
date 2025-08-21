@@ -1,0 +1,53 @@
+name,qx,qy,is_metropolitan,country,category
+Rome,41.9028,12.4964,True,Italy,basic-maps
+Milan,45.4642,9.19,True,Italy,basic-maps
+Naples,40.8522,14.2681,True,Italy,basic-maps
+Turin,45.0703,7.6869,True,Italy,basic-maps
+Palermo,38.1157,13.3615,True,Italy,basic-maps
+Genoa,44.4056,8.9463,True,Italy,basic-maps
+Bologna,44.4949,11.3426,True,Italy,basic-maps
+Florence,43.7699,11.2556,True,Italy,basic-maps
+Bari,41.1171,16.8719,True,Italy,basic-maps
+Catania,37.5079,15.083,True,Italy,basic-maps
+Venice,45.4408,12.3155,False,Italy,basic-maps
+Verona,45.4384,10.9916,False,Italy,basic-maps
+Messina,38.1938,15.554,False,Italy,basic-maps
+Padua,45.4064,11.8768,False,Italy,basic-maps
+Trieste,45.6495,13.7768,False,Italy,basic-maps
+Taranto,40.4644,17.247,False,Italy,basic-maps
+Brescia,45.5416,10.2118,False,Italy,basic-maps
+Prato,43.88,11.097,False,Italy,basic-maps
+Parma,44.8015,10.3279,False,Italy,basic-maps
+Reggio Calabria,38.111,15.647,False,Italy,basic-maps
+Modena,44.6471,10.9252,False,Italy,basic-maps
+Reggio Emilia,44.6983,10.6312,False,Italy,basic-maps
+Perugia,43.1107,12.3908,False,Italy,basic-maps
+Ravenna,44.4184,12.2035,False,Italy,basic-maps
+Livorno,43.5485,10.3106,False,Italy,basic-maps
+Cagliari,39.2238,9.1217,False,Italy,basic-maps
+Foggia,41.4622,15.5446,False,Italy,basic-maps
+Salerno,40.6824,14.7681,False,Italy,basic-maps
+Ferrara,44.835,11.6198,False,Italy,basic-maps
+Sassari,40.7272,8.555,False,Italy,basic-maps
+Latina,41.4676,12.9037,False,Italy,basic-maps
+Giugliano in Campania,40.9271,14.195,False,Italy,basic-maps
+Monza,45.5845,9.273,False,Italy,basic-maps
+Siracusa,37.0755,15.2866,False,Italy,basic-maps
+Pescara,42.4618,14.2161,False,Italy,basic-maps
+Bergamo,45.6983,9.6773,False,Italy,basic-maps
+Forlì,44.222,12.041,False,Italy,basic-maps
+Trento,46.0669,11.1217,False,Italy,basic-maps
+Vicenza,45.5455,11.5354,False,Italy,basic-maps
+Terni,42.5626,12.6415,False,Italy,basic-maps
+Bolzano,46.4983,11.3548,False,Italy,basic-maps
+Novara,45.445,8.6222,False,Italy,basic-maps
+Piacenza,45.0526,9.6929,False,Italy,basic-maps
+Ancona,43.6158,13.5189,False,Italy,basic-maps
+Arezzo,43.4633,11.8796,False,Italy,basic-maps
+Cesena,44.1391,12.243,False,Italy,basic-maps
+La Spezia,44.1025,9.8241,False,Italy,basic-maps
+Catanzaro,38.9098,16.5877,False,Italy,basic-maps
+Lecce,40.3529,18.174,False,Italy,basic-maps
+Udine,46.062,13.2348,False,Italy,basic-maps
+Treviso,45.6669,12.2425,False,Italy,basic-maps
+Lucca,43.843,10.5055,False,Italy,basic-maps
