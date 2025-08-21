@@ -9,13 +9,12 @@
   <ul class="divide-y rounded-xl border bg-white">
     {% for cat in categories %}
       <li>
-
             <a href="{% url 'CategoryDetailsPage' category_slug=cat.slug %}" class="block px-4 py-2 hover:bg-gray-100 transition">
                 <div class="flex items-center justify-between">
                     <span class="font-medium text-xl ">{{ cat.name }}</span>
                 </div>
             </a>
-            
+
       </li>
     {% endfor %}
   </ul>

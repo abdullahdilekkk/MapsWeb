@@ -1,0 +1,11 @@
+name,qx,qy,is_metropolitan
+Paris,48.8566,2.3522,True
+Marseille,43.2965,5.3698,True
+Lyon,45.7640,4.8357,True
+Toulouse,43.6047,1.4442,True
+Nice,43.7102,7.2620,True
+Nantes,47.2184,-1.5536,False
+Strasbourg,48.5734,7.7521,False
+Montpellier,43.6119,3.8777,False
+Bordeaux,44.8378,-0.5792,False
+Lille,50.6292,3.0573,False

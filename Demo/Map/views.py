@@ -1,10 +1,23 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import City, Country, Category
-# Create your views here.
 import folium, os, csv
 from django.conf import settings
-
+from pathlib import Path
+from django.urls import reverse
 # Create your views here.
+country_cooridnates = {
+    "turkey": [39.0, 35.0],
+    "germany": [51.0, 10.0],
+    "france": [46.0, 2.0],
+    "italy": [42.5, 12.5],
+    "spain": [40.0, -4.0],
+    "netherlands": [52.2, 5.3],
+    "united kingdom": [55.0, -3.0],#sorun olabilir boşluk ve slug 
+    "usa": [37.0, -95.0],
+    "canada": [56.0, -106.0],
+    "japan": [36.0, 138.0],
+    "greece": [39.0, 22.0], 
+}
 
 def show_map(request, title, location, zoom=6):
     m = folium.Map(
@@ -26,32 +39,66 @@ def categories_get(request):
 
 
 def category_details_get(request, category_slug):
-    category_details = get_object_or_404(Category, slug=category_slug)
+    category = get_object_or_404(Category, slug=category_slug)
 
-    countries = Country.objects.filter(categories=category_details).order_by("name")
+    countries = []
 
-    context = {
-        "category":category_details,
-        "countries":countries
-    }
+    if category.slug == "metropolitans":
+        base = Path(settings.BASE_DIR) / "MarkerOneCSV" / "metropolitans"
+        if base.exists():
+            for p in sorted(base.glob("*.csv")):
+                slug = p.stem.lower()   # france.csv -> "france"
+                country, _ = Country.objects.get_or_create(
+                    slug=slug, defaults={"name": slug.replace("-", " ").title()}
+                )
+                if not country.categories.filter(pk=category.pk).exists():
+                    country.categories.add(category)
 
-    return render(request, "Categories/CategoryDetails.html", context)
+                href = reverse(
+                    "metropolitanMapsPage",
+                    kwargs={"category_slug": category.slug, "country_slug": country.slug},
+                )
+                countries.append({"name": country.name, "href": href})
+    else:
+        for c in Country.objects.filter(categories=category).order_by("name"):
+            href = reverse(
+                "CountryPage",
+                kwargs={"category_slug": category.slug, "country_slug": c.slug},
+            )
+            countries.append({"name": c.name, "href": href})
+
+    return render(
+        request,
+        "Categories/CategoryDetails.html",
+        {"category": category, "countries": countries},
+    )
 
 
 def country_details(request, category_slug, country_slug):
-
     category = get_object_or_404(Category, slug=category_slug)
-    country = get_object_or_404(Country, slug=country_slug, categories=category)
+    country  = get_object_or_404(Country, slug=country_slug, categories=category)
+
     # Bu ülkeye ait, bu kategoriye bağlı şehirler
-    cities = City.objects.filter(country=country, category=category).order_by("name")
+    qs = City.objects.filter(country=country, category=category).order_by("name")
 
-    context = {
-        "category": category,
-        "country":country,
-        "cities":cities
-    }
+    # Şehirler için linki view’da üret
+    cities = []
+    for c in qs:
+        href = reverse(
+            "CityShowMap",
+            kwargs={
+                "category_slug": category.slug,
+                "country_slug":  country.slug,
+                "city_slug":     c.slug,
+            },
+        )
+        cities.append({"name": c.name, "href": href})
 
-    return render(request, "Categories/CountryDetails.html", context) 
+    context = {"category": category, "country": country, "cities": cities}
+    return render(request, "Categories/CountryDetails.html", context)
+
+
+
 
 def city_show_map(request, category_slug, country_slug, city_slug):
 
@@ -67,39 +114,56 @@ def city_show_map(request, category_slug, country_slug, city_slug):
         zoom = 12
     return show_map(request, city.name, [city.qx, city.qy], zoom=zoom)
 
+def metropolitanMaps(request ,category_slug, country_slug):
+    category_details, _ = Category.objects.get_or_create(
+        slug=category_slug, defaults={"name": category_slug.capitalize()}
+    )
+    country, _ = Country.objects.get_or_create(
+        slug=country_slug, defaults={"name": country_slug.capitalize()}
+    )
+    country.categories.add(category_details)
 
-def turkeyMetropolitan(request):
-    path = os.path.join(settings.BASE_DIR, "MarkerOne", "turkey_cities.csv")
+    csv_path = os.path.join(settings.BASE_DIR, "MarkerOneCSV", category_slug, f"{country_slug}.csv")
 
-    m = folium.Map(location=[39.0, 35.0], zoom_start = 6)
+    # 1) slug'ı lower ederek al
+    coordinate = country_cooridnates.get(country_slug.lower())
 
-    fg_metropolitan = folium.FeatureGroup(name = "Metroplitan")
-    fg_other = folium.FeatureGroup(name = "Other")
-
-    with open(path) as file:
-
-        for row in csv.DictReader(file):
-            name = row["name"]
-            qx = float(row["qx"])
-            qy = float(row["qy"])
-            is_metropolitan = row["is_metropolitan"].strip().lower() == "true"
-            group = fg_metropolitan if is_metropolitan else fg_other
-
-
-
-            folium.CircleMarker(
-                location=[qx, qy],
-                radius=6,    #Dairenin yarıçapı
-                popup=name,  #daireye tıklanınca çıkacak şey misal burada isim çıkıyor 
-                fill = True,
-                fill_opacity=0.9
-            ).add_to(group)
+    # 2) ülkeye göre sabit zoom (USA daha uzaktan)
+    if country_slug.lower() == "usa":
+        zoom = 4
     
-    fg_metropolitan.add_to(m)   
+    else:
+        zoom = 6
+
+
+    # 3) m'yi önce oluştur (else bloğunda kullanacağız)
+    m = folium.Map(location=coordinate or [0, 0], zoom_start=zoom, width="100%", height="100%")
+
+    fg_metro = folium.FeatureGroup(name="Metropolitan")
+    fg_other = folium.FeatureGroup(name="Small City")
+
+    if os.path.exists(csv_path):
+        with open(csv_path) as file:
+            for row in csv.DictReader(file):
+                name = row["name"]
+                qx = float(row["qx"])
+                qy = float(row["qy"])
+                is_metropolitan = row["is_metropolitan"].strip().lower() == "true"
+                group = fg_metro if is_metropolitan else fg_other
+
+                folium.CircleMarker(
+                    location=[qx, qy],
+                    radius=6,
+                    popup=name,
+                    fill=True,
+                    fill_opacity=0.9
+                ).add_to(group)
+    else:
+        # m artık var; burada güvenle kullanıyoruz
+        folium.Marker(coordinate or [0, 0], popup=f"CSV bulunamadı: {csv_path}").add_to(m)
+
+    fg_metro.add_to(m)
     fg_other.add_to(m)
-    #BUARAYA LAYERCONTROL EKLİYİCEM 
 
     html = m._repr_html_()
-
-
-    return render (request, 'Categories/MarkerOne/turkey_metropolitan.html', {"map":html})
+    return render(request, "Categories/MarkerOne/Map.html", {"map": html, "title": country.name })

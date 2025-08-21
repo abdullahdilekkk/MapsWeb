@@ -1,0 +1,16 @@
+name,qx,qy,is_metropolitan
+Istanbul,41.0082,28.9784,True
+Ankara,39.9208,32.8541,True
+Izmir,38.4192,27.1287,True
+Bursa,40.1828,29.0669,True
+Adana,37.0,35.3213,True
+Gaziantep,37.0662,37.3833,True
+Konya,37.8714,32.4846,True
+Antalya,36.8969,30.7133,True
+Kayseri,38.7312,35.4787,True
+Mersin,36.8121,34.6415,True
+Trabzon,41.0,39.7167,False
+Erzurum,39.9056,41.2658,False
+Samsun,41.2928,36.3313,False
+Eskisehir,39.7767,30.5206,False
+Diyarbakir,37.9144,40.2306,False

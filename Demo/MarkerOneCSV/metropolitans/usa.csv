@@ -1,0 +1,11 @@
+name,qx,qy,is_metropolitan
+New York,40.7128,-74.0060,True
+Los Angeles,34.0522,-118.2437,True
+Chicago,41.8781,-87.6298,True
+Houston,29.7604,-95.3698,True
+Phoenix,33.4484,-112.0740,True
+Philadelphia,39.9526,-75.1652,False
+San Antonio,29.4241,-98.4936,False
+San Diego,32.7157,-117.1611,False
+Dallas,32.7767,-96.7970,False
+San Jose,37.3382,-121.8863,False

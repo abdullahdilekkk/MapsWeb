@@ -9,13 +9,11 @@
   <ul class="divide-y rounded-xl border bg-white">
     {% for city in cities %}
       <li>
-
-            <a href="{% url 'CityShowMap' category_slug=category.slug country_slug=country.slug city_slug=city.slug %}" class="block px-4 py-2 hover:bg-gray-100 transition">
-                <div class="flex items-center justify-between">
-                    <span class="font-medium text-xl ">{{ city.name }}</span>
-                </div>
-            </a>
-            
+        <a href="{{ city.href }}" class="block px-4 py-2 hover:bg-gray-100 transition">
+          <div class="flex items-center justify-between">
+            <span class="font-medium text-xl">{{ city.name }}</span>
+          </div>
+        </a>
       </li>
     {% endfor %}
   </ul>
