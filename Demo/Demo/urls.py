@@ -22,4 +22,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Map/', include("Map.urls")),
+    path('accounts/',include("django.contrib.auth.urls")),#login ve logout default gelir bununla beraber
 ]

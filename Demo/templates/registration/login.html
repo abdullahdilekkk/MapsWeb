@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %} Login Page{% endblock %}
+
+{% block content %}
+
+    <div class="min-h-[70vh] grid place-items-center px-4 py-10">
+    <!-- Kart -->
+    <div class="w-full max-w-md rounded-2xl border border-emerald-100 bg-white/80 shadow-sm backdrop-blur">
+        <div class="px-6 pt-6"><h1 class="text-2xl font-bold text-center">Login</h1></div>
+
+            <form method="post" class="space-y-4">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+
+                <div>
+                    <label for="id_username" class="block text-sm font-medium text-emerald-700">
+                    Kullanıcı adı
+                    </label>
+                    <input id="id_username" name="username" type="text" autocomplete="username"
+                        class="mt-1 w-full rounded-lg border p-2 outline-none focus:ring-2 focus:ring-emerald-500"
+                        required>
+                </div>
+
+                <div>
+                    <label for="id_password" class="block text-sm font-medium text-emerald-700">
+                    Şifre
+                    </label>
+                    <input id="id_password" name="password" type="password" autocomplete="current-password"
+                        class="mt-1 w-full rounded-lg border p-2 outline-none focus:ring-2 focus:ring-emerald-500"
+                        required>
+                </div>
+
+                <button type="submit"
+                        class="w-full rounded-lg bg-emerald-600 p-2 font-semibold text-white hover:bg-emerald-700">
+                    Giriş
+                </button>
+
+                <div class="text-center text-sm text-gray-600">
+                    Hesabın yok mu?
+                    <a href="#" class="font-medium text-emerald-700 hover:underline">Kayıt ol</a>
+                </div>
+            </form>
+    </div>
+    </div>
+    
+{% endblock %}
+
+

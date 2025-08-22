@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'Map',
+    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
