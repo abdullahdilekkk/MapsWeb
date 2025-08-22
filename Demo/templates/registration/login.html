@@ -8,18 +8,25 @@
     <div class="w-full max-w-md rounded-2xl border border-emerald-100 bg-white/80 shadow-sm backdrop-blur">
         <div class="px-6 pt-6"><h1 class="text-2xl font-bold text-center">Login</h1></div>
 
+            {% if form.non_field_errors %}
+            {% comment %}Birden çok alanı birlikte doğrularken ya da form genelinde oluşan hatalara non_field_errors denir {% endcomment %}
+                <div class="mx-6 mt-4 rounded-lg bg-red-50 p-3 text-sm text-red-700">
+                    {% for error in form.non_field_errors %}<p>{{ error }}</p>{% endfor %}
+                </div>
+            {% endif %}
+
+
             <form method="post" class="space-y-4">
                 {% csrf_token %}
-                <input type="hidden" name="next" value="{{ next }}">
-
+                {% comment %} <input type="hidden" name="next" value="{{ next }}"> İSTERSEN BURDAKİ NEXTE {% endcomment %}
+                {% comment %} SAYFAYI YAZIP BURAYA GÖNDEREBİLİRİZ AMA BEN VİEW YAZMAYI TERCİH EDİCEM {% endcomment %}
                 <div>
-                    <label for="id_username" class="block text-sm font-medium text-emerald-700">
-                    Kullanıcı adı
-                    </label>
+                    <label for="id_username" class="block text-sm font-medium text-emerald-700">User Name</label>
                     <input id="id_username" name="username" type="text" autocomplete="username"
                         class="mt-1 w-full rounded-lg border p-2 outline-none focus:ring-2 focus:ring-emerald-500"
                         required>
                 </div>
+            
 
                 <div>
                     <label for="id_password" class="block text-sm font-medium text-emerald-700">
@@ -37,7 +44,7 @@
 
                 <div class="text-center text-sm text-gray-600">
                     Hesabın yok mu?
-                    <a href="#" class="font-medium text-emerald-700 hover:underline">Kayıt ol</a>
+                    <a href="{% url 'signup' %}" class="font-medium text-emerald-700 hover:underline">Kayıt ol</a>
                 </div>
             </form>
     </div>

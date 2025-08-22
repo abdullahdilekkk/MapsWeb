@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %} Sign Up {% endblock %}
+
+{% block content %}
+<div class="min-h-[70vh] grid place-items-center px-4 py-10">
+  <div class="w-full max-w-md rounded-2xl border border-emerald-100 bg-white/80 shadow-sm backdrop-blur">
+    <div class="px-6 pt-6">
+      <h1 class="text-2xl font-bold text-center">Kayıt Ol</h1>
+    </div>
+
+    {% if form.non_field_errors %}
+      <div class="mx-6 mt-4 rounded-lg bg-red-50 p-3 text-sm text-red-700">
+        {% for error in form.non_field_errors %}<p>{{ error }}</p>{% endfor %}
+      </div>
+    {% endif %}
+
+    <form method="post" class="space-y-4 px-6 pb-6">
+      {% csrf_token %}
+
+      <div>
+        <label for="id_username" class="block text-sm font-medium text-emerald-700">Kullanıcı adı</label>
+        <input id="id_username" name="username" type="text" autocomplete="username"
+               class="mt-1 w-full rounded-lg border p-2 outline-none focus:ring-2 focus:ring-emerald-500"
+               value="{{ form.username.value|default_if_none:'' }}" required>
+      </div>
+
+      <div>
+        <label for="id_password1" class="block text-sm font-medium text-emerald-700">Şifre</label>
+        <input id="id_password1" name="password1" type="password" autocomplete="new-password"
+               class="mt-1 w-full rounded-lg border p-2 outline-none focus:ring-2 focus:ring-emerald-500" required>
+      </div>
+
+      <div>
+        <label for="id_password2" class="block text-sm font-medium text-emerald-700">Şifre (tekrar)</label>
+        <input id="id_password2" name="password2" type="password" autocomplete="new-password"
+               class="mt-1 w-full rounded-lg border p-2 outline-none focus:ring-2 focus:ring-emerald-500" required>
+      </div>
+
+      <button type="submit"
+              class="w-full rounded-lg bg-emerald-600 p-2 font-semibold text-white hover:bg-emerald-700">
+        Kayıt Ol
+      </button>
+
+      <div class="text-center text-sm text-gray-600">
+        Zaten hesabın var mı?
+        <a href="{% url 'login' %}" class="font-medium text-emerald-700 hover:underline">Giriş yap</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
