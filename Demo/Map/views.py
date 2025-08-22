@@ -4,7 +4,8 @@ import folium, os, csv
 from django.conf import settings
 from pathlib import Path
 from django.urls import reverse
-# Create your views here.
+
+
 country_cooridnates = {
     "turkey": [39.0, 35.0],
     "germany": [51.0, 10.0],
@@ -45,21 +46,52 @@ def category_details_get(request, category_slug):
 
     if category.slug == "metropolitans":
         base = Path(settings.BASE_DIR) / "MarkerOneCSV" / "metropolitans"
-        if base.exists():
-            for p in sorted(base.glob("*.csv")):
-                slug = p.stem.lower()   # france.csv -> "france"
-                country, _ = Country.objects.get_or_create(
-                    slug=slug, defaults={"name": slug.replace("-", " ").title()}
-                )
-                if not country.categories.filter(pk=category.pk).exists():
-                    country.categories.add(category)
+        
+        for p in sorted(base.glob("*.csv")):    #glob oradaki (içindeki) dosyayı bulur
+            #base de benim zaten dosya yolum yani dosya yolumun ordaki parantez içindeki dosyayla eşleşenler 
+            slug = p.stem.lower()   
+            # p.name    > "france.csv"
+            # p.stem    > "france"
+            # p.suffix  > ".csv"
+            # p= bir yol misal Demo/MarkerOneCSV/metropolitans/france.csv
 
-                href = reverse(
-                    "metropolitanMapsPage",
-                    kwargs={"category_slug": category.slug, "country_slug": country.slug},
-                )
-                countries.append({"name": country.name, "href": href})
-    else:
+            country, _ = Country.objects.get_or_create(  
+                #get_or_create her zaman tuple döndürürü(obj, created)  burada _ demek kullanılmıyor o demek 
+                #obj =zaten country created de boolean döner ama kullanmıyoruz
+                slug=slug, defaults={"name": slug.replace("-", " ").title()}
+                #eğer slug=slug objesi yoksa defaults a göre oluşturur 
+                #burada da sluguna değer veriyoruz slug=north-korea olarak gelir 
+                #replace - gördğü yere space atar titlr da herkelimenin baş harfini büyütür 
+                #böylece name = "North Korea"
+            )
+
+
+            if not country.categories.filter(pk=category.pk).exists():
+                #manytomany ilişki var coutry ve category arasında ve modelde dedik ki country den related_name
+                #olarak categories olarak erişsin dedik böylece 
+                country.categories.add(category)
+                # Eğer bu ülke zaten bu kategoriye bağlı değilse, kategoriye ekle
+                #kast ettiğim category slug ile gelen yani metropolitans a itlya nın categorileri bağlı mı
+
+            #from django.urls import reverse imporu ile çalışır 
+            href = reverse(
+                "metropolitanMapsPage",
+                kwargs={"category_slug": category.slug, "country_slug": country.slug},
+            )
+
+            #reverse url oluşturucak misal urls de şöyel bir path var
+            #path('deneme/<slug:birinci_slug>, views.method, name="page")
+
+            #url = reverse(
+            #   "page",
+            #   kwargs={"birinci_slug":merhabalar}
+            #)
+
+
+            countries.append({"name": country.name, "href": href})
+
+    elif category.slug == "basic-maps":
+
         for c in Country.objects.filter(categories=category).order_by("name"):
             href = reverse(
                 "CountryPage",
@@ -67,11 +99,7 @@ def category_details_get(request, category_slug):
             )
             countries.append({"name": c.name, "href": href})
 
-    return render(
-        request,
-        "Categories/CategoryDetails.html",
-        {"category": category, "countries": countries},
-    )
+    return render(request, "Categories/CategoryDetails.html", {"category": category, "countries": countries},)
 
 
 def country_details(request, category_slug, country_slug):
@@ -81,7 +109,6 @@ def country_details(request, category_slug, country_slug):
     # Bu ülkeye ait, bu kategoriye bağlı şehirler
     qs = City.objects.filter(country=country, category=category).order_by("name")
 
-    # Şehirler için linki view’da üret
     cities = []
     for c in qs:
         href = reverse(
@@ -123,7 +150,7 @@ def metropolitanMaps(request ,category_slug, country_slug):
     )
     country.categories.add(category_details)
 
-    csv_path = os.path.join(settings.BASE_DIR, "MarkerOneCSV", category_slug, f"{country_slug}.csv")
+    csv_path = Path(settings.BASE_DIR) / "MarkerOneCSV" / category_slug / f"{country_slug}.csv"
 
     # 1) slug'ı lower ederek al
     coordinate = country_cooridnates.get(country_slug.lower())
