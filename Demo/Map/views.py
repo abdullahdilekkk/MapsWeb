@@ -279,10 +279,10 @@ def weather_heatmap(request, category_slug, country_slug):
                       {"map": "<p>Bu ülke için koordinat bulunamadı.</p>", "title": country.name})
 
     lat0, lon0 = geo["center"]
-    zoom       = geo["zoom"]
+    zoom = geo["zoom"]
 
     # 1) Baz harita
-    m = folium.Map(location=[lat0, lon0], zoom_start=zoom, width="100%", height="100%", tiles="OpenStreetMap")
+    m = folium.Map(location=[lat0, lon0], zoom_start=zoom, width="100%", height="100%")
 
     # 2) Ülkeyi ekrana sığdır
     bounds = {
@@ -302,16 +302,51 @@ def weather_heatmap(request, category_slug, country_slug):
         L, B, R, T = bounds[key]
         m.fit_bounds([[B, L], [T, R]])
 
-    
-    rv = requests.get("https://api.rainviewer.com/public/weather-maps.json", timeout=5).json()
-    past = (rv.get("radar") or {}).get("past") or []
-    when = past[-1]["time"] if past else None
+        iso3 = {
+            "france": "FRA",
+            "germany": "DEU",
+            "italy": "ITA",
+            "spain": "ESP",
+            "netherlands": "NLD",
+            "united-kingdom": "GBR",
+            "turkey": "TUR",
+            "greece": "GRC",
+            "usa": "USA",
+            "canada": "CAN",
+            "japan": "JPN",
+        }.get(key)
+
+        if iso3:
+
+            url = f"https://raw.githubusercontent.com/johan/world.geo.json/master/countries/{iso3}.geo.json"
+            data = requests.get(url).json()
+
+            folium.GeoJson(
+                data,
+                name=country.name,
+                style_function=lambda _: {#style_function a bir method vermek zorundayız 
+                    "color": "#2563eb",
+                    "weight": 2,
+                    "fillColor": "#60a5fa",
+                    "fillOpacity": 0.1,
+                },
+            ).add_to(m)
+
+
+    data = requests.get("https://api.rainviewer.com/public/weather-maps.json", timeout=5).json()
+    past = data.get("radar").get("past")
+    when = past[-1]["time"] if past else None   #list in en son eklenen elamanı yani (-1)
     if when:
         tiles = f"https://tilecache.rainviewer.com/v2/radar/{when}/256/{{z}}/{{x}}/{{y}}/2/1_1.png"
-        folium.TileLayer(tiles=tiles, name="Yağış (Radar)", attr="© RainViewer",
-                        overlay=True, control=True, show=True, opacity=0.8).add_to(m)
-    else:
-        folium.Marker([lat0, lon0], popup="Radar verisi yok.").add_to(m)
+        folium.TileLayer(
+            tiles=tiles,
+            name="Yağış (Radar)",
+            attr="© RainViewer",
+            overlay=True,
+            control=True,
+            show=True,
+            opacity=0.8
+        ).add_to(m)
 
 
     html = m._repr_html_()
