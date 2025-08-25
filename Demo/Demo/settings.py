@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+from decouple import config
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -138,3 +138,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 LOGIN_REDIRECT_URL = 'CategoryPage'
+
+
+METNO_USER_AGENT = "my-weather-app/1.0 (contact: mail@domain.com)"
+
+
+#OPENWEATHER_API_KEY = config("OPENWEATHER_API_KEY")
