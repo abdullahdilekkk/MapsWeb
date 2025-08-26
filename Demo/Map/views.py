@@ -264,10 +264,6 @@ def metropolitanMaps(request ,category_slug, country_slug):
 
 
 
-
-
-
-
 def weather_heatmap(request, category_slug, country_slug):
     category = get_object_or_404(Category, slug=category_slug)
     country  = get_object_or_404(Country, slug=country_slug, categories=category)
