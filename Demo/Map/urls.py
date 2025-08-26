@@ -6,6 +6,7 @@ urlpatterns = [
     path('category/<slug:category_slug>/<slug:country_slug>/', views.country_details, name="CountryPage"),
     path('category/<slug:category_slug>/<slug:country_slug>/metropolitan/', views.metropolitanMaps, name="metropolitanMapsPage"),
     path('category/<slug:category_slug>/<slug:country_slug>/weather/', views.weather_heatmap, name="WeatherPage"),
+    path('category/<slug:category_slug>/<slug:country_slug>/economies/', views.economy_map, name="EconomyPage"),
     path('category/<slug:category_slug>/<slug:country_slug>/<slug:city_slug>/', views.city_show_map, name="CityShowMap"),
 
 ]

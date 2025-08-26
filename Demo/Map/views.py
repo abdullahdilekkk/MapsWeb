@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import City, Country, Category
-import folium, os, csv
+import folium, os, csv, json 
 from django.conf import settings
 from pathlib import Path
 from django.urls import reverse
@@ -160,6 +160,24 @@ def category_details_get(request, category_slug):
 
             )
             countries.append({"name":c.name, "href":href_weather})
+
+    elif category.slug == "economies":
+        base = Path(settings.BASE_DIR) / "economiesJSON"
+        for p in sorted(base.glob("*.json")):
+            slug = p.stem.lower()
+            country, _ = Country.objects.get_or_create(
+                slug=slug,
+                defaults={"name": slug.replace("-", " ").title()}
+            )
+
+            if not country.categories.filter(pk=category.pk).exists():
+                country.categories.add(category)
+
+            href = reverse(
+                "EconomyPage",
+                kwargs={"category_slug": category.slug, "country_slug": country.slug}
+            )
+            countries.append({"name": country.name, "href": href})
 
 
 
@@ -348,3 +366,22 @@ def weather_heatmap(request, category_slug, country_slug):
     html = m._repr_html_()
     return render(request, "Categories/MarkerOne/Map.html", {"map": html, "title": country.name})
 
+def economy_map(request, category_slug, country_slug):
+    
+    title = f"{country_slug.replace('-', ' ').title()} — Economy Choropleth"
+    json_path = Path(settings.BASE_DIR) / "economiesJSON" / f"{country_slug}.json"
+
+    if not json_path.exists():
+        # Dosya yoksa da kart yapısı çalışsın; şablon uyarıyı gösterebilir.
+        return render(request, "Economy/map.html", {
+            "title": title,
+            "statesData": "null",
+        })
+
+    with open(json_path) as f:
+        data = json.load(f)
+
+    return render(request, "Economy/map.html", {
+        "title": title,
+        "statesData": json.dumps(data),
+    })
