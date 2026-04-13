@@ -20,10 +20,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-x5%navd_5=7&mrnmups)c8jkh!86trj#u)s)_i5zoez=%4#gga'
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-x5%navd_5=7&mrnmups)c8jkh!86trj#u)s)_i5zoez=%4#gga')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -143,4 +143,4 @@ LOGIN_REDIRECT_URL = 'CategoryPage'
 METNO_USER_AGENT = "my-weather-app/1.0 (contact: mail@domain.com)"
 
 
-#OPENWEATHER_API_KEY = config("OPENWEATHER_API_KEY")
+OPENWEATHER_API_KEY = config("OPENWEATHER_API_KEY", default="")
